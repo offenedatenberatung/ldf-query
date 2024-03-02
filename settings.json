@@ -1,0 +1,80 @@
+{
+  "queryFormats": {
+    "sparql": true,
+    "graphql": true
+  },
+  "allowNoSources": false,
+  "branding": {
+    "title": "Query Deutschlands Metadaten",
+    "title_href": "https://ldf-deutschland.onrender.com/",
+    "subtitle": "Live in your browser, powered by Comunica",
+    "subtitle_href": "https://comunica.dev/",
+    "page_title": "Comunica Web client"
+  },
+  "map": {
+    "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "attribution": "Map data &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>"
+  },
+  "solidAuth": {
+    "settingsOnly": true,
+    "defaultIdp": "https://login.inrupt.com/"
+  },
+  "datasources": [
+    {
+      "name": "Bundesländer",
+      "url": "https://ldf-server.onrender.com/bundeslaender-deutschland"
+    },
+    {
+      "name": "Kreise",
+      "url": "https://ldf-server.onrender.com/kreise-deutschland"
+    },
+    {
+      "name": "Regionalschlüssel",
+      "url": "https://ldf-server.onrender.com/regionalschluessel-deutschland"
+    },
+    {
+      "name": "Moers: Geburten",
+      "url": "https://ldf-server.onrender.com/moers-geburten"
+    },
+    {
+      "name": "Moers: Altersgruppen",
+      "url": "https://ldf-server.onrender.com/moers-altersgruppen"
+    },
+    {
+      "name": "Moers: Sozialräume",
+      "url": "https://ldf-server.onrender.com/moers-sozialraum"
+    },
+    {
+      "name": "Moers: Sozialräume Repelen",
+      "url": "https://ldf-server.onrender.com/moers-repelen"
+    },
+    {
+      "name": "Deutsche Regierungs-Metadaten Fragments",
+      "url": "https://ldf-server.onrender.com"
+    },
+    {
+      "name": "GOVdata",
+      "url": "https://govdata.de/sparql"
+    }
+  ],
+  "prefixes": {
+    "rdf":         "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":        "http://www.w3.org/2000/01/rdf-schema#",
+    "owl":         "http://www.w3.org/2002/07/owl#",
+    "skos":        "http://www.w3.org/2004/02/skos/core#",
+    "xsd":         "http://www.w3.org/2001/XMLSchema#",
+    "dc":          "http://purl.org/dc/terms/",
+    "foaf":        "http://xmlns.com/foaf/0.1/",
+    "dbpedia":     "http://dbpedia.org/resource/",
+    "dbpedia-owl": "http://dbpedia.org/ontology/",
+    "dbpprop":     "http://dbpedia.org/property/",
+    "wdprop":      "http://www.wikidata.org/prop/direct/",
+    "ruben":       "https://ruben.verborgh.org/profile/#",
+    "rubent":      "https://www.rubensworks.net/#",
+    "schema":      "http://schema.org/",
+    "bow":         "https://betweenourworlds.org/ontology/",
+    "lc":          "http://semweb.mmlab.be/ns/linkedconnections#",
+		"dcat":        "http://www.w3.org/ns/dcat#"
+  },
+  "queries": "(Will be generated from the 'queries' folder by running the './queries-to-json' script.)"
+}

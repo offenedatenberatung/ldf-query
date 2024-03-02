@@ -1,0 +1,30 @@
+#
+# Geburten kompliziert
+# Datasource: https://ldf-server.onrender.com/moers-geburten
+# Datasource: https://ldf-server.onrender.com/moers-repellen
+PREFIX qb: <http://purl.org/linked-data/cube#>
+SELECT ?value ?dimension  {
+  ?s a qb:Observation ;
+     qb:measure ?value ;
+  	qb:dimension ?dimension .
+  FILTER(?dimension = "2022"^^xsd:gYear)
+}
+
+
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+SELECT ?measure ?title WHERE {
+{
+SELECT ?measure WHERE {
+    ?s a qb:Observation ;
+     <https://lod-moers.onrender.com/properties/sozialraum> ?sozialraum ;
+     <https://lod-moers.onrender.com/properties/value> ?measure .
+  FILTER(?sozialraum = <https://lod-moers.onrender.com/sozialraum/nord/repelen/>)
+  }
+}
+{
+SELECT * WHERE {
+    <https://lod-moers.onrender.com/sozialraum/nord/repelen/> <http://purl.org/dc/terms/title> ?title
+  }
+}
+}

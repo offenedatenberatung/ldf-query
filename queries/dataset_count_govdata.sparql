@@ -1,0 +1,6 @@
+# Anzahl Datensätze ingesamt (govdata)
+# Datasource: https://govdata.de/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT (COUNT(?dataset) AS ?datasets) WHERE {
+  ?dataset a dcat:Dataset .
+}

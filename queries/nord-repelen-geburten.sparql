@@ -1,0 +1,14 @@
+# Geburten Moers nach Sozialraum
+# Datasource: https://ldf-server.onrender.com/moers-geburten
+# Datasource: https://ldf-server.onrender.com/moers-repellen
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+SELECT ?sozialraum ?measure ?title WHERE {
+    ?s a qb:Observation ;
+     <https://lod-moers.onrender.com/properties/sozialraum> ?sozialraum ;
+     <https://lod-moers.onrender.com/properties/value> ?measure .
+  OPTIONAL {
+    ?sozialraum <http://purl.org/dc/terms/title> ?title
+  }
+  FILTER(?sozialraum = <https://lod-moers.onrender.com/sozialraum/nord/repelen/>)
+}

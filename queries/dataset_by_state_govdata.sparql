@@ -1,0 +1,9 @@
+# Anzahl Datensätze nach Bundesland (govdata)
+# Datasource: https://govdata.de/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT (COUNT(?dataset) AS ?datasets) WHERE {
+  ?dataset a dcat:Dataset .
+	?dataset dcatde:politicalGeocodingURI ?bundeslandUri
+
+	FILTER(strstarts(str(?bundeslandUri), "http://dcat-ap.de/def/politicalGeocoding/"))
+}
